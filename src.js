@@ -7,5 +7,11 @@ class Person {
     this.phone = phone;
   }
 }
+class Clasz {
+  constructor(people, name) {
+    this.people = people;
+    this.name = name;
+  }
+}
 
 
