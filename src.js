@@ -42,14 +42,17 @@ const numericalClasz = new Clasz("12-B", claszB, numericalLessons);
 console.table(numericalClasz);
 console.table(numericalClasz.students);
 
+//SelectBox'ı dinleyip change event'i ile bir değişikil olursa fonksiyon çalıştırıyoruz
 document.getElementById("numericalSelectBox").addEventListener("change", () => {
   displaySelectedOption();
 });
+
 const displaySelectedOption = () => {
   const selectedValue = document.getElementById("numericalSelectBox").value;
   const contentBody = document.getElementById("contentBody");
+  const tableHead = document.getElementById("tableHead");
   contentBody.innerHTML = ""; // Tabloyu temizle
-  tableHead.innerHTML = "";
+  tableHead.innerHTML = ""; // Tabloyu temizle
 
   if (selectedValue === "students") {
     // Eğer "Students List" seçeneği seçildiyse
