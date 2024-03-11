@@ -1,9 +1,9 @@
 class Person {
-  constructor(firstName, lastName, age, adress, phone) {
+  constructor(firstName, lastName, age, city, phone) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
-    this.adress = adress;
+    this.city = city;
     this.phone = phone;
   }
 }
@@ -31,14 +31,65 @@ const claszB = [
 ];
 
 const numericalLessons = [
-  new Lesson("Matematik", 8, 2),
-  new Lesson("Fizik", 4, 2),
-  new Lesson("Kimya", 4, 2),
-  new Lesson("Biyoloji", 4, 2),
+  new Lesson("Mathematics", 8, 2),
+  new Lesson("Physics", 4, 2),
+  new Lesson("Chemistry", 4, 2),
+  new Lesson("Biology", 4, 2),
 ];
 
 const numericalClasz = new Clasz("12-B", claszB, numericalLessons);
 
+console.table(numericalClasz);
 console.table(numericalClasz.students);
 
+document.getElementById("numericalSelectBox").addEventListener("change", () => {
+  displaySelectedOption();
+});
+const displaySelectedOption = () => {
+  const selectedValue = document.getElementById("numericalSelectBox").value;
+  const contentBody = document.getElementById("contentBody");
+  contentBody.innerHTML = ""; // Tabloyu temizle
+  tableHead.innerHTML = "";
 
+  if (selectedValue === "students") {
+    // Eğer "Students List" seçeneği seçildiyse
+    const thRow = document.createElement("tr");
+    thRow.innerHTML = `
+        <th scope="col" class="th-info">First Name</th>
+        <th scope="col" class="th-info">Last Name</th>
+        <th scope="col" class="th-info">Age</th>
+        <th scope="col" class="th-info">City</th>
+        <th scope="col" class="th-info">Phone</th>
+            `;
+    claszB.forEach((student) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+                <td>${student.firstName}</td>
+                <td>${student.lastName}</td>
+                <td>${student.age}</td>
+                <td>${student.city}</td>
+                <td>${student.phone}</td>
+            `;
+      contentBody.appendChild(row);
+    });
+    tableHead.appendChild(thRow);
+  } else if (selectedValue === "lessons") {
+    // Eğer "Numerical Lessons" seçeneği seçildiyse
+    const thRow = document.createElement("tr");
+    thRow.innerHTML = `
+        <th scope="col" class="th-info">Lesson Name</th>
+        <th scope="col" class="th-info">Lesson Time</th>
+        <th scope="col" class="th-info">Number of Quiz</th>
+            `;
+    numericalLessons.forEach((lesson) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+                <td>${lesson.lessonName}</td>
+                <td>${lesson.lessonTimeOnWeekly}</td>
+                <td>${lesson.numberOfQuiz}</td>
+            `;
+      contentBody.appendChild(row);
+    });
+    tableHead.appendChild(thRow);
+  }
+};

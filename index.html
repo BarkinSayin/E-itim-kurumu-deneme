@@ -71,12 +71,20 @@
         </div>
       </div>
     </nav>
-    <div class="container mt-3">
-      <select class="form-select" aria-label="Default select example" id="numericalSelectBox">
+    <div class="container">
+      <select
+        class="form-select mt-3"
+        aria-label="Default select example"
+        id="numericalSelectBox"
+      >
         <option selected>Choose One</option>
-        <option value="1">Students List</option>
-        <option value="2">Numerical Lessons</option>
+        <option value="students">Students List</option>
+        <option value="lessons">Numerical Lessons</option>
       </select>
+      <table class="table mt-3" id="classTable">
+        <thead id="tableHead"></thead>
+        <tbody id="contentBody"></tbody>
+      </table>
     </div>
     <script src="src.js"></script>
     <script
