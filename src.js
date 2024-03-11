@@ -39,4 +39,6 @@ const numericalLessons = [
 
 const numericalClasz = new Clasz("12-B", claszB, numericalLessons);
 
-console.log(numericalClasz);
+console.table(numericalClasz.students);
+
+
