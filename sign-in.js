@@ -10,13 +10,14 @@ document.addEventListener("DOMContentLoaded", () =>{
   
       // Kullanıcı adı ve şifre kontrolü yapılır
       if (email === "barkinsayin@hotmail.com" && password === "9999") {
-        // Doğru kullanıcı adı ve şifre, yeni bir sayfaya yönlendir
+        // Doğru kullanıcı adı ve şifre ise yeni bir sayfaya yönlendir
         window.location.href = "http://127.0.0.1:5500/index.html"; // Yönlendirilecek sayfanın URL'si
+        //Kullanıcı adı veya şifre kısmı boş mu konrolü yapılır
       }else if(email===""||password===""){
         alert("Please fill in the password or email section. ");
       }
        else {
-        // Hatalı kullanıcı adı veya şifre, kullanıcıyı uyar
+        // Hatalı kullanıcı adı veya şifre ise kullanıcıyı uyar
         alert("Incorrect email or password. Please try again.");
       }
     });
