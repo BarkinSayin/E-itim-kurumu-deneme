@@ -22,8 +22,11 @@ class Lesson {
   }
 }
 class Quiz{
-  constructor(lessonName,){
-    
+  constructor(whichQuiz,numberOfQuestion,questions,answers){
+    this.whichQuiz=whichQuiz;
+    this.numberOfQuestion=numberOfQuestion;
+    this.questions=questions;
+    this.answers=answers;
   }
 }
 const claszB = [
@@ -31,7 +34,7 @@ const claszB = [
   new Person("Mert", "Kırant", 24, "İstanbul", "05356784567"),
   new Person("Eralp", "Nitelik", 27, "İstanbul", "05321345678"),
   new Person("Ege", "Erkek", 22, "İzmir", "05342134567"),
-  new Person("Ceren", "Dinçer", 22, "İstanbul", "05432345671"),
+  new Person("Ceren", "Dinçer", 31, "İstanbul", "05432345671"),
   new Person("Ali", "Taşkıran", 27, "İstanbul", "05312347896"),
 ];
 
