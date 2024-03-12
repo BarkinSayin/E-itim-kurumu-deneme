@@ -21,6 +21,11 @@ class Lesson {
     this.numberOfQuiz = numberOfQuiz;
   }
 }
+class Quiz{
+  constructor(lessonName,){
+    
+  }
+}
 const claszB = [
   new Person("Barkın", "Sayın", 24, "İstanbul", "05354692134"),
   new Person("Mert", "Kırant", 24, "İstanbul", "05356784567"),
