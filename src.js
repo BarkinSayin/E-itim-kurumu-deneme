@@ -28,6 +28,7 @@ const claszB = [
   new Person("Ege", "Erkek", 22, "İzmir", "05342134567"),
   new Person("Ceren", "Dinçer", 31, "İstanbul", "05432345671"),
   new Person("Ali", "Taşkıran", 27, "İstanbul", "05312347896"),
+  new Person("Berkay","Turna",34)
 ];
 
 const numericalLessons = [
@@ -69,9 +70,9 @@ const displaySelectedOption = () => {
       row.innerHTML = `
                 <td>${student.firstName}</td>
                 <td>${student.lastName}</td>
-                <td>${student.age}</td>
-                <td>${student.city}</td>
-                <td>${student.phone}</td>
+                <td>${student.age?student.age:"Not specified"}</td>
+                <td>${student.city?student.city:"Not specified"}</td>
+                <td>${student.phone?student.phone:"Not specified"}</td>
             `;
       contentBody.appendChild(row);
     });
